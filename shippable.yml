@@ -1,12 +1,26 @@
 language: php
+
 php:
  - "7.0"
+ - "7.1"
+
 env:
- - FIZZ=bin
- - FOO=bar
+  global:
+    # Hipchat config
+    - PROJECT="Some project"
+  matrix:
+    - IMAGE=php7.0
+    - IMAGE=php7.1
+    
+matrix:
+  include:
+    - php: "7.0"
+      env: IMAGE=php7.0
+    - php: "7.1"
+      env: IMAGE=php7.1
 
 build:
   pre_ci:
-    - env | grep SHIPPABLE
+    - env | grep IMAGE
   ci:
     - echo "Hello, world"
