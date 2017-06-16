@@ -1,0 +1,10 @@
+language: php
+php:
+ - "7.0"
+ - "7.1"
+
+build:
+  pre_ci:
+    - env | grep SHIPPABLE
+  ci:
+    - echo "Hello, world"
