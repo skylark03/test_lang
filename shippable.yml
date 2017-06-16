@@ -9,6 +9,8 @@ env:
     - IMAGE=php7.1
     
 matrix:
+  exclude:
+    - php: "5.6"
   include:
     - php: "7.0"
       env: IMAGE=php7.0
