@@ -19,6 +19,9 @@ matrix:
 
 build:
   pre_ci:
-    - env | grep IMAGE
+    - echo $IMAGE
+  pre_ci_boot:
+    image_name: ragesh/foo
+    image_tag: $IMAGE
   ci:
     - echo "Hello, world"
