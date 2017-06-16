@@ -1,7 +1,9 @@
 language: php
 php:
  - "7.0"
- - "7.1"
+env:
+ - FIZZ=bin
+ - FOO=bar
 
 build:
   pre_ci:
